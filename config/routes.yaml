@@ -1,0 +1,6 @@
+home:
+    path: /
+    controller: App\Controller\HomeController::index
+service:
+    path: /service/{name}
+    controller: App\Controller\ServiceController::showService    
