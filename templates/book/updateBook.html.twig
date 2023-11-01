@@ -1,0 +1,12 @@
+{{form_start(formB)}}
+
+        {{form_label(formB.title,"Title:")}}
+   <td> {{form_widget(formB.title)}} </td>
+   <td> {{form_label(formB.category,"Category:")}} </td>
+   <td> {{form_widget(formB.category)}} </td>
+   <td> {{form_label(formB.publicationDate,"publicationDate:")}}</td>
+   <td> {{form_widget(formB.publicationDate)}}</td>
+   <td> {{form_label(formB.published,"published:")}}</td>
+   <td> {{form_widget(formB.published)}}</td>
+<button type="submit">save</button>
+{{ form_end(formB) }}
