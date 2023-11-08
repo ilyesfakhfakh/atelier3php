@@ -1,0 +1,28 @@
+<h1>List des joueur </h1>
+<table border="1">
+    <tr>
+        <th>id </th>
+        <th>name </th>
+        <th>equipe</th>
+        <th>moyenne vote</th>
+        <th>Actions </th>
+        <th>nombre totale </th>
+
+        
+        
+    </tr>
+    <tr>
+       <tr>{% for a in joueur%}</tr>
+       <td>{{ a.id}} </td>
+       <td>{{ a.nom |upper}} </td>
+       <td>{{ a.equipe}}</td>
+       
+       <td>{{ moyennesVotes }}</td>
+     <td><a href="{{path('Detail',{id:a.id})}}">Details vote</a></td>
+     
+
+    
+      
+        {% endfor %}
+    </tr>
+</table>

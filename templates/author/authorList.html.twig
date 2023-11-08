@@ -3,6 +3,7 @@
     <tr>
         <th>Username </th>
         <th>Email </th>
+        <th>Number of books</th>
         <th>Actions </th>
         
         
@@ -11,6 +12,7 @@
        <tr>{% for a in author%}</tr>
        <td>{{ a.username}} </td>
        <td>{{ a.email}} </td>
+       <td>{{ a.nbBooks}}</td>
        <td>
        <a href="{{path('update',{'id': a.id})}}">edit</a>
        <a href="{{path('delete',{'id': a.id})}}">delete</a>

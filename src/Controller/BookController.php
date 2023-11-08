@@ -70,11 +70,11 @@ class BookController extends AbstractController
     #[Route('/deleteBook/{ref}', name: 'deleteBook')]
     public function delete(BookRepository $repo,$ref,ManagerRegistry $mr): Response
     {
-        $s=$repo->find($ref);
+        $book=$repo->find($ref);
         $em=$mr->getManager();
-        $em->remove($s);
+        $em->remove($book);
         $em->flush();
-        return $this->redirectToRoute('list_author');
+        return $this->redirectToRoute('fetch_book');
 
     }
     #[Route('/details/{ref}', name: 'app_author_details')]
@@ -84,5 +84,13 @@ class BookController extends AbstractController
             'books' => $books,
         ]);
     }
+    #[Route('/qbBook/{ref}',name:'listAuthorbyemail')]
+    public function qb(BookRepository $repo,$ref){
+        $result=$repo->searchBookByRef($ref);
+     //dd($result);
+     return $this->render("book/book.html.twig",
+        ['author'=>$result
+    ]);
 
+    }
 }
